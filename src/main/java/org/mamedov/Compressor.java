@@ -1,6 +1,6 @@
 package org.mamedov;
 
-public class Main {
+public class Compressor {
 
     public static void main(String[] args) {
 //        String bigString = "AAAAANNNMMMMYYYYuuuuUUUUaaaarWWLLLLJ888DDDDDDDDD";
