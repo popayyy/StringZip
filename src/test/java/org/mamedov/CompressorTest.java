@@ -1,6 +1,5 @@
 package org.mamedov;
 
-import org.junit.Assert;
 import org.junit.jupiter.api.Assertions;
 
 class CompressorTest {

@@ -3,12 +3,12 @@ package org.mamedov;
 public class Compressor {
 
     public static void main(String[] args) {
-//        String bigString = "AAAAANNNMMMMYYYYuuuuUUUUaaaarWWLLLLJ888DDDDDDDDD";
+        String bigString = "AAAAANNNMMMMYYYYuuuuUUUUaaaarWWLLLLJ888DDDDDDDDD";
 //        String bigString = "rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr" +
 //                "rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr" +
 //                "rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr" +
 //                "AAAAANNNMMMMYYYYuuuuUUUUaaaarWWLLLLJ888DDDDDDDDD";
-        String bigString = "bnm";
+//        String bigString = "bnm";
         System.out.println(bigString);
 
         String compressString = compress(bigString);
@@ -19,9 +19,12 @@ public class Compressor {
 
     }
 
-    /**
-     * @param input
-     * @return
+    /** Compress the input string to the more short length.
+     * Effective only for the string which have repeating characters like AAAAANNNMMMMYYYYuuuuUUUU
+     * Algorithm convert the repeating characters to 2 values XY , where X - Character, Y - how much it repeats
+     * For saving the counts of repeats used the character value it gets possibility to use counter to 65535 (Character.MAX_VALUE)
+     * @param input Normal string
+     * @return compressed string
      */
     public static String compress(String input) {
 
@@ -59,9 +62,9 @@ public class Compressor {
         return builderResult.toString();
     }
 
-    /**
-     * @param input
-     * @return
+    /** Decompress String to the normal view
+     * @param input compressed string
+     * @return normal string
      */
     public static String deCompress(String input) {
 
