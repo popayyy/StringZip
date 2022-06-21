@@ -11,6 +11,7 @@ class CompressorTest {
     void compress() {
 
         String compressStrAct = Compressor.compress(NORMAL_STR);
+        System.out.println("compressStrAct: |"  + compressStrAct + "|");
 
         Assertions.assertEquals(COMPRESS_STR, compressStrAct);
         Assertions.assertTrue(compressStrAct.length() < NORMAL_STR.length());
@@ -20,6 +21,7 @@ class CompressorTest {
     void deCompress() {
 
         String normalStrAct = Compressor.deCompress(COMPRESS_STR);
+        System.out.println("normalStrAct: |" + normalStrAct + "|");
 
         Assertions.assertEquals(NORMAL_STR, normalStrAct);
 
